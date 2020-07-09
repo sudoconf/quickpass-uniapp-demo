@@ -1,0 +1,47 @@
+{
+	"name": "YD-Verification",
+	"id": "YD-Verification",
+	"version": "1.0.0",
+	"description": "易盾号码认证",
+	"_dp_type":"nativeplugin",
+	"_dp_nativeplugin":{
+		"ios": {
+			"plugins": [
+				{
+					"type": "module",
+					"name": "YD-Login",
+					"class": "NTESQuickPassModule"
+				}
+			],
+			"integrateType": "library",
+			"deploymentTarget": "8.0",
+			"resources": [
+				"sdk_oauth.bundle",
+				"TYRZResource.bundle"
+			],
+			 "frameworks": [  
+				 "EAccountApiSDK.framework",
+				 "NTESQuickPass.framework",
+				 "OAuth.framework",
+				 "NTESQuickPassExpand.a",
+				 "TYRZSDK.framework",
+				 "libz.1.2.8.tbd",
+				 "libc++.1.tbd"
+			]
+		},
+		"android": {
+			"plugins": [
+				{
+					"type": "module",
+					"name": "YD-Login",
+					"class": "com.netease.nis.quicklogin.uniplugin.YDQuickLoginModule"
+				}
+			],
+			"dependencies": [
+				"com.google.code.gson:gson:2.8.5"
+			],
+			"integrateType": "aar",
+			"minSdkVersion" : 16
+		}
+	}
+}
